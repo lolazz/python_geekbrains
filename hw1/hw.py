@@ -7,8 +7,13 @@ nums = input("Введите пару-тройку целых чисел чер�
 numbers = list(map(int, nums.split()))
 print(f'Вы ввели {numbers}, вы такой молодец')
 
-timeInSeconds = input("Давайте я преведу ваши секудны куда-нибудь?")
-print(f'В ваших секундах вот столько {datetime.timedelta(seconds=float(timeInSeconds))}')
+timeInSeconds = int(input("Давайте я преведу ваши секудны куда-нибудь?"))
+seconds = timeInSeconds % 60
+minutes = ((timeInSeconds) // 60) % 60
+hours = timeInSeconds // 3600
+print(
+    f'В ваших секундах вот столько по версии timedelta {datetime.timedelta(seconds=float(timeInSeconds))},\n'
+    f' а по моей вот столько : {hours:02}:{minutes:02}:{seconds:02}')
 
 multiplicator = input("Введите множитель от 0 до 9")
 multiplicator = int(multiplicator)
@@ -21,8 +26,7 @@ biggestNum = 0
 while a > 0:
     a = a - 1
     qwe = (intNum // (10 ** a))
-    if biggestNum < qwe:
-        biggestNum = qwe
+    biggestNum = max(qwe, biggestNum)
     intNum = intNum % (10 ** a)
 
 print(f"Самая большая цифра в числе была{biggestNum}")
@@ -31,7 +35,11 @@ profit = float(input("Введите выручку вашей конторы"))
 costs = float(input("Введите издержки вашей конторы"))
 
 if profit > costs:
-    print("А выручка то у вас больше издержек, вы в плюсе!")
+    print(
+        f"А выручка то у вас больше издержек, вы в плюсе! "
+        f"Рентабельность: {((profit - costs) / profit) * 100:10.4f} процентов")
+    employeesCount = int(input("Сколько человек работает?"))
+    print(f"один человек вам приносит {((profit - costs) / employeesCount)}")
 
 elif costs > profit:
     print("Да у вас издержки больше выручки!")
