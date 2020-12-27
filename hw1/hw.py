@@ -8,6 +8,10 @@ import datetime
 # numbers = list(map(int, nums.split()))
 # print(f'Вы ввели {numbers}, вы такой молодец')
 
+nums = input("Введите пару-тройку целых чисел через пробел")
+numbers = list(map(int, nums.split()))
+print(f'Вы ввели {numbers}, вы такой молодец')
+
 timeInSeconds = int(input("Давайте я преведу ваши секудны куда-нибудь?"))
 seconds = timeInSeconds % 60
 minutes = ((timeInSeconds) // 60) % 60
