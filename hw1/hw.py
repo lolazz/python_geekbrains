@@ -1,7 +1,12 @@
 import datetime
 
-str1 = input("Введите ваше Имя: ")
-print(f'Прекрасно выглядите, {str1}')
+#
+# str1 = input("Введите ваше Имя: ")
+# print(f'Прекрасно выглядите, {str1}')
+#
+# nums = input("Введите пару-тройку целых чисел через пробел")
+# numbers = list(map(int, nums.split()))
+# print(f'Вы ввели {numbers}, вы такой молодец')
 
 nums = input("Введите пару-тройку целых чисел через пробел")
 numbers = list(map(int, nums.split()))
